@@ -1,0 +1,84 @@
+.navbar {
+	background: linear-gradient(to right, #2b2a2a, #000000);
+	position: relative;
+}
+.svg {
+	animation: App-logo-spin infinite 20s linear;
+}
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+.nav-item {
+	transition: all 0.7s;
+	font-size: 1.1rem;
+}
+.nav-item:hover {
+	transform: translateY(5px);
+}
+.active {
+	text-shadow: 1px 1px 5px;
+}
+
+.speedDial {
+	position: absolute;
+	top: 15px;
+	transition: all 0.5s;
+}
+.speedDial button {
+	width: 35px;
+	height: 12px;
+}
+.speedDial:hover {
+	transform: translateY(5px);
+}
+.speedDial .MuiSpeedDialAction-staticTooltipLabel {
+	width: max-content;
+}
+.avatar {
+	height: 100%;
+	width: 100%;
+	border-radius: 100%;
+}
+.search {
+	color: rgb(155, 155, 155);
+	transition: all 0.5s;
+	width: 20vw;
+	position: relative;
+}
+.search:hover {
+	transform: translateX(-10px);
+}
+.search .icon {
+	position: absolute;
+	top: 0px;
+}
+.search input {
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	background-color: transparent;
+	border-bottom: 1px solid rgb(155, 155, 155);
+	user-select: auto;
+	color: aliceblue;
+	margin-left: 5px;
+	margin-bottom: 0;
+	transition: all 0.5s;
+	width: 18vw;
+}
+@media (max-width: 992px) {
+	.speedDial {
+		right: 50px;
+		top: 70px;
+	}
+}
+@media (max-width: 576px) {
+	.speedDial {
+		right: 10px;
+		top: 70px;
+	}
+}

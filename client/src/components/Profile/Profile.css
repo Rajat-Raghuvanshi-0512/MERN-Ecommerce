@@ -1,0 +1,62 @@
+.profile-img {
+	width: 350px;
+	height: 350px;
+}
+.userimage {
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+.userimage:hover {
+	transform: translateY(-10px);
+	box-shadow: 5px 1px 10px rgba(0, 0, 0, 0.4), 1px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.image-box {
+	margin-top: 10px;
+}
+
+.avatarpreview {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	margin: 4px 10px;
+}
+.profile-btn {
+	background-color: #27debf;
+	color: white;
+	transition: all 0.4s;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+	padding: 10px 19px;
+}
+.profile-btn:hover {
+	background-color: #26caaf;
+	color: aliceblue;
+	transform: scale(1.1);
+}
+
+@media (max-width: 767px) {
+	.details h2 {
+		font-size: 3rem;
+	}
+	.details h4 {
+		font-size: 1.5rem;
+	}
+}
+@media (max-width: 576px) {
+	.details {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+}
+@media (max-width: 400px) {
+	.profile-img {
+		width: 250px;
+		height: 250px;
+	}
+}

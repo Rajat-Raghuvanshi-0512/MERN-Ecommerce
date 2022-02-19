@@ -1,0 +1,19 @@
+.Users {
+	display: flex;
+}
+.adminUsersContainer {
+	width: 100%;
+	border-left: 1px solid rgba(0, 0, 0, 0.12);
+	padding: 2rem 3rem;
+	background-color: rgb(252, 252, 252);
+}
+.allUsers .MuiDataGrid-columnHeaders {
+	background-color: tomato;
+	color: aliceblue;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 767px) {
+	.adminUsersContainer {
+		padding: 0 1vmax;
+	}
+}

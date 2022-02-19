@@ -1,0 +1,19 @@
+.adminOrders {
+	display: flex;
+}
+.adminOrdersContainer {
+	width: 100%;
+	border-left: 1px solid rgba(0, 0, 0, 0.12);
+	padding: 2rem 3rem;
+	background-color: rgb(252, 252, 252);
+}
+.allOrders .MuiDataGrid-columnHeaders {
+	background-color: rgb(224, 215, 83);
+	color: aliceblue;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 767px) {
+	.adminOrdersContainer {
+		padding: 0 1vmax;
+	}
+}

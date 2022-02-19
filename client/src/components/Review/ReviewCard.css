@@ -1,0 +1,34 @@
+.review-img {
+	width: 100%;
+	border-radius: 100%;
+}
+.review-component {
+	width: 20vw;
+}
+.review-rating-component {
+	transform: scale(1.2);
+}
+@media (max-width: 767px) {
+	.review-rating-component {
+		transform: scale(0.9);
+	}
+}
+@media (max-width: 567px) {
+	.review-rating-component {
+		transform: scale(0.7);
+	}
+	.review-name {
+		font-size: 0.9rem;
+	}
+	.review-comment span {
+		font-size: 0.8rem !important;
+	}
+	.review-component {
+		width: 30vw;
+	}
+}
+@media (max-width: 467px) {
+	.review-rating-component {
+		transform: scale(0.5);
+	}
+}

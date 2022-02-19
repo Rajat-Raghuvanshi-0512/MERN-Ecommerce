@@ -1,0 +1,98 @@
+.containers {
+	height: 88vh;
+	padding: 0px 50px;
+	position: relative;
+}
+.containers::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	background: linear-gradient(to right, #313131, #0c0c0c);
+	clip-path: polygon(0 50%, 0% 100%, 100% 100%);
+}
+.homeimg {
+	width: 100%;
+	height: 100%;
+}
+.my-heading span {
+	border-bottom: 4px solid rgb(0, 0, 0);
+	padding: 0px 30px;
+}
+.main {
+	transition: all 0.5s;
+	cursor: url("../../images/cursor.png");
+}
+.main-heading span {
+	font-size: 100%;
+}
+.scroll {
+	transition: all 1s;
+	position: relative;
+	overflow: hidden;
+	border-top: 3px solid #313131;
+	border-radius: 0%;
+}
+.scroll::before {
+	content: "";
+	height: 0%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	background-color: #313131;
+	z-index: -1;
+	transition: all 1s;
+	border-radius: 0% 0% 50% 50%;
+}
+.scroll:hover {
+	color: aliceblue;
+	border: none;
+}
+.scroll:hover::before {
+	top: 0;
+	height: 200%;
+}
+.main:hover {
+	transform: scale(1.1) translateY(25px);
+}
+@media (max-width: 768px) {
+	.containers {
+		justify-content: flex-start;
+		font-size: 0.3rem;
+		padding: 0 10px;
+		height: 100%;
+	}
+	.containers::after {
+		clip-path: polygon(
+			100% 100%,
+			100% 100%,
+			100% 100%,
+			100% 100%,
+			100% 100%
+		);
+	}
+	.main {
+		padding: 5vmax 0;
+	}
+	.main:hover {
+		transform: none;
+	}
+	.main-heading {
+		padding: 3vmax 0;
+	}
+	.heading {
+		padding: 3vmax 0;
+	}
+	.my-heading span {
+		font-size: 2.3rem;
+		margin: 15px 0;
+		padding: 5px 0px;
+	}
+}

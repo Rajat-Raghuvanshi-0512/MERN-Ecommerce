@@ -1,0 +1,97 @@
+/*Product Info*/
+.carousel-item {
+	max-height: 80vh;
+}
+.carousel-img {
+	height: 90vh;
+	width: 100%;
+	object-fit: contain;
+}
+.myprice {
+	font-family: "Roboto", sans-serif;
+	font-size: 2.3rem;
+}
+.quantity {
+	padding: 25px 0;
+	border-top: 1px solid gainsboro;
+	border-bottom: 1px solid gainsboro;
+}
+.quantity input[type="number"] {
+	width: 30px;
+	border: none;
+	outline: none;
+	text-align: center;
+}
+.addToCart {
+	margin-left: 4rem;
+}
+.button {
+	background: linear-gradient(to right, #555555, #121212);
+	color: white;
+	padding: 10px 20px;
+	outline: none;
+	border: none;
+	border-radius: 30px;
+	transition: all 0.5s;
+}
+.button:hover {
+	background: linear-gradient(to left, #333333, #000);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+.review-btn:hover {
+	transform: scale(1.3);
+}
+.review-card {
+	margin: 15px 10px;
+	padding: 0px 10px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	transition: all 0.5s;
+	cursor: default;
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.review-card:hover {
+	border: 1px solid gainsboro;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+	transform: translateY(-5px);
+}
+.review-img {
+	padding: 15px;
+	max-width: 30vh;
+}
+.info-rating {
+	font-size: 2.5rem !important;
+}
+@media (max-width: 885px) {
+	.review-card {
+		min-width: 20vh;
+	}
+	.review-img {
+		width: 100px;
+	}
+	.quantity {
+		flex-direction: column;
+		align-items: center;
+		padding: 10px 0;
+	}
+	.addToCart {
+		margin: 15px 0;
+	}
+	.rating-count {
+		font-size: 0.6rem;
+	}
+	.info-rating {
+		font-size: 2.3rem !important;
+	}
+}
+@media (max-width: 576px) {
+	.info-rating {
+		font-size: 1.8rem !important;
+	}
+	.id_font {
+		font-size: 0.7rem;
+	}
+}

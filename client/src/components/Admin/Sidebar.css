@@ -1,0 +1,77 @@
+.sidebar {
+	width: 25vw;
+	padding-left: 30px;
+	min-height: 90vh;
+	background-color: rgba(0, 0, 0, 0.021);
+}
+.main-sidebar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.sidebar a,
+.sidebar ul li div,
+.sidebar ul li div svg {
+	font-size: 1.2rem !important;
+}
+.sidebar a div,
+.sidebar ul > li {
+	transition: all 0.4s;
+	margin: 25px 0px;
+}
+.sidebar a div:hover,
+.sidebar ul li:hover {
+	transform: translateX(-5px) !important;
+	color: black;
+}
+.sidebar a div:active,
+.sidebar ul li:active {
+	color: rgba(0, 0, 0, 0.409);
+}
+.sidebar .Mui-focused,
+.sidebar .Mui-selected,
+.sidebar .Mui-expanded {
+	background-color: transparent !important;
+}
+.MuiTreeItem-iconContainer,
+.MuiTreeItem-label {
+	margin: 0px !important;
+}
+.MuiTreeItem-iconContainer {
+	margin-right: 5px !important;
+}
+.MuiTreeItem-root.MuiTreeItem-content,
+.css-1g86id8-MuiTreeItem-content {
+	cursor: url("../../images/up-sign.png"), auto !important;
+}
+
+@media (min-width: 926px) {
+	#toggle-sidebar {
+		visibility: visible;
+		display: block;
+	}
+}
+
+@media (max-width: 927px) {
+	.sidebar {
+		width: 100vw;
+		min-height: 10vh;
+	}
+	.title_heading {
+		font-size: 1.5rem;
+		padding: 10px !important;
+		visibility: hidden;
+		position: relative;
+	}
+	.title_heading::after {
+		position: absolute;
+		content: "SideBar";
+		visibility: visible;
+		top: 20px;
+		left: 0;
+	}
+	.sidebar .sidebar-toggle {
+		font-size: 3rem;
+		margin-right: 20px;
+	}
+}

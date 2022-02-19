@@ -1,0 +1,93 @@
+.admin_container {
+	width: 100%;
+	min-height: 90vh;
+	display: flex;
+}
+.dashboardContainer {
+	border-left: 1px solid rgba(0, 0, 0, 0.12);
+	padding: 2rem 3rem;
+	width: 100vw;
+}
+.totalAmount {
+	text-align: center;
+	background-color: #27bebf;
+	color: white;
+	font-size: 1.7rem;
+	border-radius: 5px;
+}
+.totalAmount span {
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.links {
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 50px;
+}
+.link a {
+	font-weight: bold;
+	border-radius: 100%;
+	width: 150px;
+	height: 150px;
+	text-decoration: none;
+	color: whitesmoke;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 1.4rem;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.32);
+	transition: all 0.4s;
+}
+.link a {
+	background-color: rgb(224, 215, 83);
+}
+.link:first-child a {
+	background-color: rgba(0, 0, 0, 0.858);
+}
+.link:last-child > a {
+	background-color: tomato;
+}
+.link a:hover {
+	background-color: rgb(192, 183, 54);
+	transform: translateY(-5px);
+}
+.link:first-child a:hover {
+	background-color: rgba(0, 0, 0, 0.946);
+}
+.link:last-child > a:hover {
+	background-color: rgb(231, 64, 34);
+}
+.lineChart {
+	width: 90%;
+	margin: auto;
+}
+.DoughnutChart {
+	width: 50%;
+	margin: 20px auto;
+}
+.DoughnutChart:hover {
+	cursor: pointer;
+}
+@media (max-width: 927px) {
+	.admin_container {
+		flex-direction: column;
+	}
+}
+@media (max-width: 576px) {
+	.link a {
+		width: 100px;
+		height: 100px;
+		font-size: 1rem;
+	}
+	.dashboardContainer {
+		padding: 1rem;
+	}
+}
+@media (max-width: 476px) {
+	.link a {
+		font-size: 0.7rem;
+		width: 80px;
+		height: 80px;
+	}
+}

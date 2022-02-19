@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: "Poppins", sans-serif;
+}
+body {
+	cursor: url("./images/cursor.png"), auto !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input::file-selector-button {
+	cursor: pointer;
+	width: 40%;
+	outline: none;
+	border: none;
+	padding: 0.5vmax 0vmax;
+	transition: all 0.4s;
+	background-color: transparent;
+	border-radius: 10px;
+	z-index: 100000;
+	background-color: #27debf;
+}
+input:focus,
+textarea:focus {
+	outline: none !important;
+}
+button {
+	transition: all 0.4s !important;
+}
+button:hover {
+	transform: scale(1.1);
+}
+
+input::file-selector-button:hover {
+	background-color: #27bebf;
+}
+a,
+input[type="submit"],
+input[type="checkbox"],
+button,
+.cursor,
+.MuiButtonBase-root,
+.MuiDataGrid-columnHeader,
+.MuiRating-root,
+.MuiSlider-root {
+	cursor: url("./images/pointer.png"), auto !important;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+	cursor: url("./images/text-editor.png"), auto;
+}
+.width-100 {
+	width: 100%;
+}
