@@ -39,3 +39,8 @@
 	padding: 10px 0px;
 	text-transform: uppercase;
 }
+@media (max-width: 767px) {
+	.myOrders {
+		padding: 0 1vmax;
+	}
+}
