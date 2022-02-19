@@ -32,11 +32,12 @@ app.use("/api", user)
 app.use("/api", order)
 app.use("/api", payment)
 
-app.use(express.static(path.join(__dirname, "../client/build")))
+//For production
+// app.use(express.static(path.join(__dirname, "../client/build")))
 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../client/build/index.html"))
-})
+// app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "../client/build/index.html"))
+// })
 
 app.use(ErrorHandler)
 

@@ -75,10 +75,25 @@
 		right: 50px;
 		top: 70px;
 	}
+	.cart-login {
+		flex-direction: row !important;
+	}
+	.cart-login li {
+		padding: 5px 10px;
+	}
 }
 @media (max-width: 576px) {
 	.speedDial {
 		right: 10px;
 		top: 70px;
+	}
+	.search {
+		width: 90vw;
+		margin: 0px 10px;
+	}
+	.search-input {
+		width: 100% !important;
+		transition: none !important;
+		color: #000000 !important;
 	}
 }

@@ -38,9 +38,9 @@ const Navbars = () => {
                         </ul>
                         <div className='search'>
                             <SearchIcon className='icon' />
-                            <input className=" me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleOnChange} />
+                            <input className="search-input me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleOnChange} />
                         </div>
-                        <ul className="navbar-nav mb-2 mb-lg-0 ">
+                        <ul className="navbar-nav mb-2 mb-lg-0 cart-login ">
                             {
                                 isAuthenticated === false &&
                                 <>

@@ -27,7 +27,7 @@ const Home = () => {
             <Metadata title="Shop Buddy | India's most famous E-commerce website" />
             {loading
                 ? <Loader />
-                : <>
+                : <div className='home-component'>
                     <div className="containers">
                         <div className="row">
                             <div className="main text-center col-lg-8 col-md-7 col-sm-6 d-flex align-items-center justify-content-start flex-column pt-5">
@@ -58,7 +58,7 @@ const Home = () => {
                             }
                         </div>
                     </div>
-                </>}
+                </div>}
         </>
     )
 }

@@ -7,7 +7,7 @@ export const mainContainerCss = {
     display: 'flex',
     width: '70%',
     borderRadius: '5px',
-    padding: "50px",
+    paddingY: "50px",
     background: 'linear-gradient(to bottom,#fefeff,#eee )'
 }
 export const innerContainer = {
