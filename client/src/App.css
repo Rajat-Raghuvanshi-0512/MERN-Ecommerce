@@ -15,7 +15,24 @@ input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.043);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.77);
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.908);
+}
 input::file-selector-button {
 	cursor: pointer;
 	width: 40%;
@@ -66,5 +83,11 @@ textarea {
 	.hide-phone {
 		display: none;
 		visibility: hidden;
+	}
+	.MuiTypography-root {
+		font-size: 2.4rem !important;
+		padding: 10px 0;
+		font-weight: bold !important;
+		width: 100%;
 	}
 }

@@ -35,29 +35,29 @@ const Home = () => {
                                 <h3 className='heading my-2'>We know what you need!</h3>
                                 <a className="btn mt-4 px-3 scroll" href="#products" >Scroll</a>
                             </div>
-                            <div className='col-lg-4 col-md-5 col-sm-6 pt-5'>
+                            <div className='col-lg-4 col-md-5 col-sm-6 pt-5 homeimg-container'>
                                 <img src={shop} alt="none" className='homeimg' />
                             </div>
                         </div>
                     </div>
                     <Typography variant='h2' className='text-center border-bottom my-4' id="products">Featured Products</Typography>
-                    <div className='mx-lg-5 mx-md-4 mx-sm-3 mx-2'>
-                        <div className="row d-flex justify-content-center">
-                            {
-                                featuredProducts && featuredProducts.map((product, index) => {
-                                    if (index < 4) {
-                                        return (
-                                            <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12" key={index}>
-                                                <ProductCard product={product} />
-                                            </div>
-                                        )
-                                    } else {
-                                        return null;
-                                    }
-                                })
-                            }
-                        </div>
+                    {/* <div className='mx-lg-5 mx-md-4 mx-sm-3 mx-2'> */}
+                    <div className="row d-flex justify-content-center m-lg-5 m-sm-3 overflow-hidden">
+                        {
+                            featuredProducts && featuredProducts.map((product, index) => {
+                                if (index < 4) {
+                                    return (
+                                        <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12 card-container" key={index}>
+                                            <ProductCard product={product} />
+                                        </div>
+                                    )
+                                } else {
+                                    return null;
+                                }
+                            })
+                        }
                     </div>
+                    {/* </div> */}
                 </div>}
         </>
     )

@@ -111,11 +111,11 @@ const Product = () => {
                                 <Loader />
                                 : <>
                                     <div className='width-100'>
-                                        <div className="row width-100 m-auto">
+                                        <div className="row width-100 m-auto ">
                                             {
                                                 products && products.length > 0 ?
                                                     products.map((product, index) => {
-                                                        return <div className="col-md-4 col-lg-3 col-sm-6" key={index}>
+                                                        return <div className="col-md-4 col-lg-3 col-sm-6 card-container" key={index}>
                                                             <ProductCard product={product} />
                                                         </div>
                                                     })

@@ -66,12 +66,16 @@
 .home-component {
 	scroll-behavior: smooth;
 }
+.containers .row {
+	width: 100%;
+}
 @media (max-width: 768px) {
 	.containers {
 		justify-content: flex-start;
 		font-size: 0.3rem;
 		padding: 0 10px;
 		height: 100%;
+		box-sizing: border-box;
 	}
 	.containers::after {
 		clip-path: polygon(
@@ -98,5 +102,23 @@
 		font-size: 2.3rem;
 		margin: 15px 0;
 		padding: 5px 0px;
+	}
+}
+
+@media (max-width: 576px) {
+	.card-container {
+		padding: 0 50px;
+		overflow: hidden;
+	}
+	.main {
+		display: none !important;
+		visibility: hidden !important;
+	}
+	.homeimg-container {
+		padding: 0 !important;
+		width: 99vw;
+	}
+	.homeimg {
+		object-fit: contain;
 	}
 }

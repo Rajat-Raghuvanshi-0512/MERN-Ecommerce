@@ -33,7 +33,7 @@ const CartItem = ({ item }) => {
                 <div className="col-12 card-title">
                     <Link to={`/product/${item.product_id}`} className='Link'>
                         <h2 className="mb-4 carth2 item_name" >{item.name} </h2>
-                        <p className=" cartp mb-2 desc"> Description: {item.desc.slice(0, 100)}...</p>
+                        <p className=" cartp mb-2 desc1"> Description: {item.desc.slice(0, 100)}...</p>
                         <p className=" cartp mb-2"><strong>Category:</strong> {item.category}</p>
                     </Link>
                 </div>
