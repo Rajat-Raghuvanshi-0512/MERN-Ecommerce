@@ -4,6 +4,7 @@
 }
 .review-component {
 	width: 20vw;
+	border: none;
 }
 .review-rating-component {
 	transform: scale(1.2);

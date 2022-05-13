@@ -15,7 +15,7 @@ const ReviewCard = ({ review, desc, picture }) => {
                     <div className='d-flex justify-content-center '>
                         <Rating value={review.rating} precision={0.5} className="review-rating-component" readOnly />
                     </div>
-                    {desc && <div className="review-comment mt-lg-4 mt-md-3 mt-sm-3" ><span className='fw-bold fs-6'> Comment:</span> <span className='text-secondary fs-6'>{desc}</span></div>}
+                    {desc && <div className="review-comment my-lg-4 my-md-3 my-sm-3" ><span className='fw-bold fs-6'> Comment:</span> <span className='text-secondary fs-6'>{desc}</span></div>}
                 </div>
             </div>
         </>

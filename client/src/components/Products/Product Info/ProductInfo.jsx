@@ -103,7 +103,7 @@ const ProductInfo = () => {
                                     </div>
                                 </div>
                                 <div className="col-md-6 py-3 px-lg-5 px-md-4 px-sm-5 p-5">
-                                    <h2 className='pt-3'>{product && product.name}</h2>
+                                    <h3 className='pt-5'>{product && product.name}</h3>
                                     <div className='text-secondary border-bottom pb-3 id_font'>Product id: {product && product._id}</div>
                                     <div className='d-flex align-items-end width-100 flex-wrap'>
                                         <Rating value={product && product.ratings} readOnly className="border-bottom py-3 info-rating" precision={0.5} size='large' />
@@ -163,7 +163,7 @@ const ProductInfo = () => {
 
                             </Dialog>
                             <h1 className="text-center border-bottom border-top py-2">Reviews</h1>
-                            <div className="d-flex overflow-auto">
+                            <div className="d-flex overflow-auto my-4">
                                 {
                                     product && product.reviews && product.reviews.length !== 0 ?
                                         product.reviews.sort((first, second) => {

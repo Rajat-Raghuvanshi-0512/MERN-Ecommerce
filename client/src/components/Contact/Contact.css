@@ -1,12 +1,30 @@
+.bg-grey {
+	background: rgba(128, 128, 128, 0.076);
+}
 .contact-conainer {
 	width: 80%;
 	margin: auto;
 	font-size: 2rem;
+	min-height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-direction: column;
 }
 .contact-name {
 	background-color: rgba(250, 215, 169, 0.633);
 	padding: 10px 20px;
 	border-radius: 15px;
+}
+.circle {
+	border-radius: 100%;
+	overflow: hidden;
+	height: 170px;
+	padding: 20px;
+}
+.circle img {
+	height: 100%;
+	width: 100%;
 }
 .sendmail,
 .insta,

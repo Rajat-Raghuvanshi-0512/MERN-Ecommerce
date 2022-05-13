@@ -44,7 +44,7 @@
 .review-card {
 	margin: 15px 10px;
 	padding: 0px 10px;
-	border: 1px solid rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.217);
 	transition: all 0.5s;
 	cursor: default;
 	border-radius: 3px;
@@ -54,9 +54,8 @@
 	flex-direction: column;
 }
 .review-card:hover {
-	border: 1px solid gainsboro;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-	transform: translateY(-5px);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.382);
+	transform: translateY(-3px);
 }
 .review-img {
 	padding: 15px;

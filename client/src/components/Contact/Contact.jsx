@@ -43,11 +43,11 @@ const Contact = () => {
     }
 
     return (
-        <>
+        <div className='bg-grey'>
             <div className="contact-conainer">
 
                 {
-                    user && <div className="wrapper mt-5">
+                    user ? <div className="wrapper mt-5">
                         <Typography variant='h2' className='text-center border-bottom' id="products">Contact Us</Typography>
                         <form onSubmit={handleSubmit}>
                             <div className="dbl-field">
@@ -76,6 +76,17 @@ const Contact = () => {
                             </div>
                         </form>
                     </div>
+                        :
+                        <div className='d-flex justify-content-center align-items-center flex-column text-center'>
+                            <h2 className='mt-5 fw-bold'>Lets talk about everything!</h2>
+                            <div className='circle my-4'>
+                                <img src="/favicon.png" alt="" />
+                            </div>
+                            <p className='fw-lighter fs-3 '>Feel free to ask us anything!</p>
+                            <div className='fs-6 mb-5 mt-3'>
+                                If you have any questions regarding your order, feel free to send email or dm me on the linked accounts.
+                            </div>
+                        </div>
                 }
                 <div className="d-flex mb-3 pt-5 justify-content-between contact-links">
                     <span className='contact-name text-center'>Email </span>
@@ -90,7 +101,7 @@ const Contact = () => {
                     <a href="https://www.linkedin.com/in/rajat-raghuvanshi-315593201/" rel="noreferrer" target="_blank" className='linkedin'> <LinkedInIcon className='mx-2 icon' /> Rajat Raghuvanshi</a>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

@@ -1,17 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Footer.css"
+import logo from "../../images/nav_logo.png"
 
 const Footer = () => {
     return (
         <>
             <footer>
                 <div className="footer-content">
-                    <h3>This is an E-commerce application.</h3>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Illo iste corrupti doloribus odio sed!
-                    </p>
+                    <Link to={"/"} style={{ width: "200px" }} className="mb-3">
+                        <img src={logo} className="width-100 h-100" />
+                    </Link>
                     <ul className="socials">
                         <li>
                             <a href="https://github.com/Rajat-Raghuvanshi-0512" target="_blank" rel="noreferrer" ><i className="fab fa-github"></i></a>
