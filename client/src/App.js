@@ -40,6 +40,9 @@ import UpdateUser from './components/Admin/Users/UpdateUser';
 import ReviewsList from './components/Admin/Reviews/ReviewsList';
 import Contact from './components/Contact/Contact';
 import About from './components/About me/About';
+import ReturnPolicy from './components/Customer Service/ReturnPolicy';
+import PrivacyPolicy from './components/Customer Service/PrivacyPolicy';
+import AboutUs from './components/Customer Service/AboutUs';
 
 function App() {
 
@@ -83,6 +86,9 @@ function App() {
           <Route exact path="/password/reset/:token" element={<ResetPassword />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/aboutme" element={<About />} />
+          <Route exact path="/aboutus" element={<AboutUs />} />
+          <Route exact path="/policy/return" element={<ReturnPolicy />} />
+          <Route exact path="/policy/privacy" element={<PrivacyPolicy />} />
 
 
           {/* Logged in user routes */}

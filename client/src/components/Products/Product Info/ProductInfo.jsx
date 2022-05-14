@@ -103,7 +103,7 @@ const ProductInfo = () => {
                                     </div>
                                 </div>
                                 <div className="col-md-6 py-3 px-lg-5 px-md-4 px-sm-5 p-5">
-                                    <h3 className='pt-5'>{product && product.name}</h3>
+                                    <h3 className='pt-5 fw-bold'>{product && product.name}</h3>
                                     <div className='text-secondary border-bottom pb-3 id_font'>Product id: {product && product._id}</div>
                                     <div className='d-flex align-items-end width-100 flex-wrap'>
                                         <Rating value={product && product.ratings} readOnly className="border-bottom py-3 info-rating" precision={0.5} size='large' />
@@ -123,7 +123,7 @@ const ProductInfo = () => {
                                             <button className="button" disabled={product && product.stock < 1 ? true : false} onClick={addToCart}>Add to Cart</button>
                                         </div>
                                     </div>
-                                    <div className=" py-3">
+                                    <div className="fw-bold py-3">
                                         Description: <span className='text-secondary opacity-75 fw-light'>{product && product.desc}</span>
                                     </div>
                                     <div className=" d-flex justify-content-center align-items-center py-3">
