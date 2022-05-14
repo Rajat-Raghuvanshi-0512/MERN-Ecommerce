@@ -13,13 +13,13 @@
 	.review-rating-component {
 		transform: scale(0.9);
 	}
+	.review-name {
+		font-size: 1.1rem;
+	}
 }
 @media (max-width: 567px) {
 	.review-rating-component {
 		transform: scale(0.7);
-	}
-	.review-name {
-		font-size: 0.9rem;
 	}
 	.review-comment span {
 		font-size: 0.8rem !important;
@@ -30,6 +30,9 @@
 }
 @media (max-width: 467px) {
 	.review-rating-component {
-		transform: scale(0.5);
+		transform: scale(0.8);
+	}
+	.review-component {
+		width: 45vw;
 	}
 }

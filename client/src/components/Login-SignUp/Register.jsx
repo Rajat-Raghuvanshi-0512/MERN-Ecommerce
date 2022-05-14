@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material/styles';
-import { Button, Container, FormControl, FormHelperText, Input, InputLabel, Typography } from '@mui/material'
+import { Button, Container, FormControl, FormHelperText, Input, InputLabel, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { Box } from '@mui/system'
-import { mainContainerCss, headingCss, addMarginX, addMarginY, theme, lastContainer } from "./ObjectCss"
+import { mainContainerCss, headingCss, addMarginX, addMarginY, theme, lastContainer, smallContainerCss, phoneHeadingCss } from "./ObjectCss"
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -19,6 +19,10 @@ const Register = () => {
         password: "",
         cpassword: ""
     })
+
+
+    const mytheme = useTheme();
+    const matches = useMediaQuery(mytheme.breakpoints.down('sm'));
 
     const handleInput = (e) => {
         const name = e.target.name;
@@ -56,11 +60,11 @@ const Register = () => {
                 loading ?
                     <Loader /> :
                     <form method='post' onSubmit={registerUser}>
-                        <Container sx={mainContainerCss}  >
+                        <Container sx={matches ? smallContainerCss : mainContainerCss}  >
                             <div className="container">
                                 <div className="row">
                                     <div className='col-md-6 col-lg-6 col-sm-12 col-12 d-flex flex-column align-items-center justify-content-center'>
-                                        <Typography variant='h4' sx={headingCss} fontFamily={"Monospance"}>Sign Up <i className="fas fa-sign-in-alt"></i></Typography>
+                                        <Typography variant='h4' sx={matches ? phoneHeadingCss : headingCss} fontFamily={"Monospance"}>Sign Up <i className="fas fa-sign-in-alt"></i></Typography>
                                         <FormControl margin='dense' color='info'>
                                             <Box component="div">
                                                 <Box component="span"><i className="fas fa-user" ></i></Box>

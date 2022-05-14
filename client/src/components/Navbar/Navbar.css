@@ -19,12 +19,12 @@
 
 .speedDial {
 	position: absolute;
-	top: 15px;
+	top: 12px;
 	transition: all 0.5s;
 }
-.speedDial button {
-	width: 35px;
-	height: 12px;
+.speedDial > button {
+	width: 45px;
+	height: 45px;
 }
 .speedDial:hover {
 	transform: translateY(5px);
@@ -32,10 +32,15 @@
 .speedDial .MuiSpeedDialAction-staticTooltipLabel {
 	width: max-content;
 }
-.avatar {
+.avatar-cont {
 	height: 100%;
 	width: 100%;
 	border-radius: 100%;
+	overflow: hidden;
+}
+.avatar {
+	width: 100%;
+	object-fit: cover;
 }
 .search {
 	color: rgb(155, 155, 155);
@@ -81,12 +86,19 @@
 		top: 70px;
 	}
 	.search {
-		width: 90vw;
-		margin: 0px 10px;
+		width: 70vw;
+		border: none;
+		outline: none;
+		margin: 10px !important;
 	}
 	.search-input {
+		border: none;
+		outline: none;
 		width: 100% !important;
 		transition: none !important;
-		color: #000000 !important;
+		color: white !important;
+	}
+	.search:hover {
+		transform: none !important;
 	}
 }

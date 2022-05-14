@@ -117,6 +117,7 @@
 	.homeimg-container {
 		padding: 0 !important;
 		width: 99vw;
+		margin: 40px 0px !important;
 	}
 	.homeimg {
 		object-fit: contain;

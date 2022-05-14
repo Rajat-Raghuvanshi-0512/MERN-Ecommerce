@@ -76,8 +76,8 @@ const ProductInfo = () => {
                         <Metadata title={`Shop Buddy | ${product && product.name}`} />
                         <div className="mx-lg-5 mx-md-5 mx-sm-2 mx-2">
                             <div className="row mx-auto">
-                                <div className="col-md-6 pt-5 carousel d-flex justify-content-center">
-                                    <div id="carouselExampleControls" className="carousel slide carousel-dark" data-bs-ride="carousel">
+                                <div className="col-md-6 pt-5  carousel d-flex justify-content-center">
+                                    <div className="carousel slide carousel-dark" data-bs-ride="carousel">
                                         <div className="carousel-inner ">
                                             {
                                                 product && product.images && product.images.length > 0 && product.images.map((image, index) => {

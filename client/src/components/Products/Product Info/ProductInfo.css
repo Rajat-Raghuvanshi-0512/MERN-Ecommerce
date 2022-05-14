@@ -87,6 +87,12 @@
 	}
 }
 @media (max-width: 576px) {
+	.carousel {
+		justify-content: flex-start !important;
+	}
+	.carousel-img {
+		height: fit-content;
+	}
 	.info-rating {
 		font-size: 1.8rem !important;
 	}

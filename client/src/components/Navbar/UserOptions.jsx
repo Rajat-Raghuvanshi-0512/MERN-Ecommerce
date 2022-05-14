@@ -41,7 +41,7 @@ const UserOptions = () => {
                         <SpeedDial
                             className="speedDial"
                             ariaLabel="SpeedDial tooltip example"
-                            icon={<img src={user.profilePhoto.url} className='avatar' alt='user'></img>}
+                            icon={<div className='avatar-cont'><img src={user.profilePhoto.url} className='avatar' alt='user' /></div>}
                             onClose={() => setState(false)}
                             onOpen={() => setState(true)}
                             open={state}

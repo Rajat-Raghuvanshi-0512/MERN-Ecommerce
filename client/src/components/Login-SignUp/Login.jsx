@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material/styles';
-import { Button, Container, FormControl, FormHelperText, Input, InputLabel, Typography } from '@mui/material'
+import { Button, Container, FormControl, FormHelperText, Input, InputLabel, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { Box } from '@mui/system'
-import { mainContainerCss, headingCss, addMarginX, addMarginY, forgotPass, theme } from "./ObjectCss"
+import { mainContainerCss, headingCss, addMarginX, addMarginY, forgotPass, smallContainerCss, theme, phoneHeadingCss } from "./ObjectCss"
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +14,9 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const Navigate = useNavigate();
     const location = useLocation()
+
+    const mytheme = useTheme();
+    const matches = useMediaQuery(mytheme.breakpoints.down('sm'));
 
     const dispatch = useDispatch();
     const { loading, isAuthenticated, error } = useSelector(state => state.userInfo)
@@ -40,7 +43,7 @@ const Login = () => {
                 loading ?
                     <Loader /> :
                     <form method='post' onSubmit={loginUser}>
-                        <Container sx={mainContainerCss}  >
+                        <Container sx={matches ? smallContainerCss : mainContainerCss}  >
                             <div className="container">
                                 <div className="row">
                                     <div className='col-md-6 col-lg-6 col-sm-12 col-12 d-flex flex-column align-items-center justify-content-center'>
@@ -48,7 +51,7 @@ const Login = () => {
                                     </div>
                                     <div className='col-md-6 col-lg-6 col-sm-12 col-12 d-flex flex-column align-items-center'>
                                         <i className="fas fa-user-circle" style={{ fontSize: "4rem" }}></i>
-                                        <Typography variant='h4' sx={headingCss} fontFamily={"Monospance"}>Sign In</Typography>
+                                        <Typography variant='h4' sx={matches ? phoneHeadingCss : headingCss} fontFamily={"Monospance"}>Sign In</Typography>
                                         <FormControl margin='dense' color='info'>
                                             <Box component="div">
                                                 <Box component="span"><i className="fas fa-user" ></i></Box>

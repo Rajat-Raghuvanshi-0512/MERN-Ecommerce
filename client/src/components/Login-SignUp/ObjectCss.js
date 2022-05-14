@@ -10,11 +10,21 @@ export const mainContainerCss = {
     paddingY: "50px",
     background: 'linear-gradient(to bottom,#fefeff,#eee )'
 }
+export const smallContainerCss = {
+    boxShadow: '5',
+    marginY: '20px',
+    alignItems: 'center',
+    display: 'flex',
+    width: '90%',
+    borderRadius: '5px',
+    paddingY: "50px",
+    background: 'linear-gradient(to bottom,#fefeff,#eee )',
+}
 export const innerContainer = {
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
-    height: '60vh'
+    minHeight: '40vh'
 }
 export const headingCss = {
     marginTop: '10px',
@@ -22,11 +32,17 @@ export const headingCss = {
     fontWeight: 'bold'
 
 }
+export const phoneHeadingCss = {
+    marginTop: '10px',
+    marginBottom: '20px',
+    textAlign: 'center',
+
+}
 export const addMarginX = {
     marginX: '20px'
 }
 export const addMarginY = {
-    marginY: '10px'
+    marginY: '20px'
 }
 export const forgotPass = {
     paddingTop: '10px',

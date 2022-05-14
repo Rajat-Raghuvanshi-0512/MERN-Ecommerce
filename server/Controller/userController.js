@@ -155,8 +155,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
         const myCloud = await cloudinary.v2.uploader.upload(req.body.profilePhoto, {
             folder: "E-commerce",
             width: 700,
-            crop: "scale",
-            height: 700
+            crop: "scale"
         })
         newData.profilePhoto = {
             public_id: myCloud.public_id,
