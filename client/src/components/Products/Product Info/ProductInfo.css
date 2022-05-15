@@ -1,11 +1,9 @@
 /*Product Info*/
-.carousel-item {
-	max-height: 80vh;
-}
 .carousel-img {
-	height: 90vh;
-	width: 100%;
+	width: 70%;
 	object-fit: contain;
+	margin: auto;
+	display: block;
 }
 .myprice {
 	font-family: "Roboto", sans-serif;
@@ -74,10 +72,11 @@
 	.quantity {
 		flex-direction: column;
 		align-items: center;
-		padding: 10px 0;
+		padding: 30px 0;
 	}
 	.addToCart {
-		margin: 15px 0;
+		margin: auto;
+		margin-top: 25px;
 	}
 	.rating-count {
 		font-size: 0.6rem;
@@ -87,7 +86,7 @@
 	}
 }
 @media (max-width: 576px) {
-	.carousel {
+	.mycarousel {
 		justify-content: flex-start !important;
 	}
 	.carousel-img {

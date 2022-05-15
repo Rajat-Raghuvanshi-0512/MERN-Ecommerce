@@ -76,14 +76,14 @@ const ProductInfo = () => {
                         <Metadata title={`Shop Buddy | ${product && product.name}`} />
                         <div className="mx-lg-5 mx-md-5 mx-sm-2 mx-2">
                             <div className="row mx-auto">
-                                <div className="col-md-6 pt-5  carousel d-flex justify-content-center">
-                                    <div className="carousel slide carousel-dark" data-bs-ride="carousel">
+                                <div className="col-md-6 d-flex justify-content-center mycarousel">
+                                    <div className="carousel slide carousel-dark d-flex justify-content-center align-items-center  mycarousel" data-bs-ride="carousel" id="carouselExampleControls">
                                         <div className="carousel-inner ">
                                             {
-                                                product && product.images && product.images.length > 0 && product.images.map((image, index) => {
+                                                product?.images?.length > 0 && product?.images?.map((image, index) => {
                                                     if (index === 0) {
                                                         return <div className="carousel-item active" key={index}>
-                                                            <img src={image && image.url} className="carousel-img " alt="..." />
+                                                            <img src={image && image.url} className="carousel-img" alt="..." />
                                                         </div>;
                                                     }
                                                     return <div className="carousel-item" key={index}>
@@ -92,7 +92,7 @@ const ProductInfo = () => {
                                                 })
                                             }
                                         </div>
-                                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <button className="carousel-control-prev fw-bold" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span className="visually-hidden">Previous</span>
                                         </button>
@@ -103,7 +103,7 @@ const ProductInfo = () => {
                                     </div>
                                 </div>
                                 <div className="col-md-6 py-3 px-lg-5 px-md-4 px-sm-5 p-5">
-                                    <h3 className='pt-5 fw-bold'>{product && product.name}</h3>
+                                    <h3 className='pt-lg-5 pt-md-5 pt-sm-3 pt-0 fw-bold'>{product && product.name}</h3>
                                     <div className='text-secondary border-bottom pb-3 id_font'>Product id: {product && product._id}</div>
                                     <div className='d-flex align-items-end width-100 flex-wrap'>
                                         <Rating value={product && product.ratings} readOnly className="border-bottom py-3 info-rating" precision={0.5} size='large' />

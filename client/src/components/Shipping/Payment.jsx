@@ -50,7 +50,6 @@ const Payment = () => {
 
     const handlePayment = async (e) => {
         e.preventDefault()
-        console.log(`inside`);
         try {
             paybtn.current.disabled = true
             const { data } = await axios.post("/api/payment/process", paymentData, {

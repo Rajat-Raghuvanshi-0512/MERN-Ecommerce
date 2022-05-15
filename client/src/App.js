@@ -63,7 +63,7 @@ function App() {
   useEffect(() => {
     store.dispatch(loadUser())
     getstripeApi()
-  }, [])
+  }, [stripeAPIKey])
 
   window.addEventListener("contextmenu", e => e.preventDefault())
 
