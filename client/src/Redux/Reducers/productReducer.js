@@ -1,4 +1,4 @@
-import { ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, ALL_PRODUCT_FAIL, CLEAR_ERRORS, PRODUCT_REQUEST, PRODUCT_SUCCESS, PRODUCT_FAIL, REVIEW_REQUEST, REVIEW_SUCCESS, REVIEW_FAIL, REVIEW_RESET, ADMIN_PRODUCT_REQUEST, ADMIN_PRODUCT_SUCCESS, ADMIN_PRODUCT_FAIL, CREATE_PRODUCT_REQUEST, CREATE_PRODUCT_SUCCESS, CREATE_PRODUCT_FAIL, CREATE_PRODUCT_RESET, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_SUCCESS, UPDATE_PRODUCT_FAIL, UPDATE_PRODUCT_RESET, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_FAIL, DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_RESET, GET_ALL_REVIEWS_REQUEST, GET_ALL_REVIEWS_FAIL, GET_ALL_REVIEWS_SUCCESS, DELETE_REVIEW_REQUEST, DELETE_REVIEW_FAIL, DELETE_REVIEW_RESET, DELETE_REVIEW_SUCCESS } from "../Constants/productConstants"
+import { ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, ALL_PRODUCT_FAIL, CLEAR_ERRORS, PRODUCT_REQUEST, PRODUCT_SUCCESS, PRODUCT_FAIL, REVIEW_REQUEST, REVIEW_SUCCESS, REVIEW_FAIL, REVIEW_RESET, ADMIN_PRODUCT_REQUEST, ADMIN_PRODUCT_SUCCESS, ADMIN_PRODUCT_FAIL, CREATE_PRODUCT_REQUEST, CREATE_PRODUCT_SUCCESS, CREATE_PRODUCT_FAIL, CREATE_PRODUCT_RESET, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_SUCCESS, UPDATE_PRODUCT_FAIL, UPDATE_PRODUCT_RESET, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_FAIL, DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_RESET, GET_ALL_REVIEWS_REQUEST, GET_ALL_REVIEWS_FAIL, GET_ALL_REVIEWS_SUCCESS, DELETE_REVIEW_REQUEST, DELETE_REVIEW_FAIL, DELETE_REVIEW_RESET, DELETE_REVIEW_SUCCESS, PRODUCT_BY_CATEGORY_REQUEST, PRODUCT_BY_CATEGORY_FAIL, PRODUCT_BY_CATEGORY_SUCCESS } from "../Constants/productConstants"
 
 
 
@@ -40,20 +40,50 @@ export const productsReducer = (state = { products: [] }, action) => {
     }
 }
 
-export const singleProductReducer = (state = { product: {} }, action) => {
+export const singleProductReducer = (state = {}, action) => {
 
     switch (action.type) {
         case PRODUCT_REQUEST:
             return {
-                loading: true,
-                product: {}
+                ...state,
+                loading: true
             };
         case PRODUCT_SUCCESS:
             return {
+                ...state,
                 loading: false,
                 product: action.payload
             };
         case PRODUCT_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            };
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            };
+
+        default:
+            return state;
+    }
+}
+
+export const similarProductsReducer = (state = { products: [] }, action) => {
+    switch (action.type) {
+        case PRODUCT_BY_CATEGORY_REQUEST:
+            return {
+                loading: true,
+                products: []
+            };
+        case PRODUCT_BY_CATEGORY_SUCCESS:
+            return {
+                loading: false,
+                products: action.payload
+            };
+        case PRODUCT_BY_CATEGORY_FAIL:
             return {
                 loading: false,
                 error: action.payload

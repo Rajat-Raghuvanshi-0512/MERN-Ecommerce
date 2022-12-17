@@ -6,13 +6,25 @@ import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import logo from "../../images/nav_logo.png"
+import { useState } from 'react';
+import { useDeferredValue } from 'react';
 const Navbars = () => {
     const location = useLocation();
     const navigate = useNavigate()
-    const handleOnChange = (e) => {
-        navigate(`/products/${e.target.value}`)
-    }
+    const [input, setInput] = useState("")
+    const value = useDeferredValue(input)
     const { isAuthenticated } = useSelector(state => state.userInfo)
+
+    const handleOnChange = (e) => {
+        setInput(() => e.target.value)
+    }
+    const handleOnKeyPress = (e) => {
+        if (e.key === "Enter") {
+            navigate(`/products/${value}`)
+        }
+    }
+
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -39,7 +51,7 @@ const Navbars = () => {
                         </ul>
                         <div className='search'>
                             <SearchIcon className='icon' />
-                            <input className="search-input me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleOnChange} />
+                            <input className="search-input bg-white border rounded py-1" type="search" placeholder="Search" onChange={handleOnChange} onKeyPress={handleOnKeyPress} />
                         </div>
                         <ul className="navbar-nav mb-2 mb-lg-0 cart-login ">
                             {

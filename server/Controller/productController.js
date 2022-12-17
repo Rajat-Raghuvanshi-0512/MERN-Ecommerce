@@ -230,3 +230,13 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
     return res.status(200).json({ success: true, message: "Sucessfully deleted review" })
 
 })
+
+//Get all products of a particular category
+exports.getAllProductsOfCategory = catchAsyncErrors(async (req, res, next) => {
+    const { category } = req.params
+    const products = await Product.find({ category })
+    if (!products) {
+        return next(new ErrorHandler(404, "No products found!"))
+    }
+    return res.status(200).json({ success: true, products })
+})

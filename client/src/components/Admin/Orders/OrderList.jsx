@@ -74,7 +74,7 @@ const OrderList = () => {
     ]
     const rows = []
 
-    orders && orders.forEach((order => {
+    orders && orders.reverse().forEach((order => {
         rows.push({
             id: order._id,
             status: order.orderStatus,

@@ -1,5 +1,5 @@
 .containers {
-	height: 88vh;
+	height: 90vh;
 	padding: 0px 50px;
 	position: relative;
 }
@@ -10,7 +10,7 @@
 	position: absolute;
 	margin: 0;
 	padding: 0;
-	top: 0;
+	bottom: 0;
 	left: 0;
 	background: linear-gradient(to right, #313131, #0c0c0c);
 	clip-path: polygon(0 50%, 0% 100%, 100% 100%);

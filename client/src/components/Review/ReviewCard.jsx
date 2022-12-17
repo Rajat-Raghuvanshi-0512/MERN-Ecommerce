@@ -1,14 +1,24 @@
 import { Rating } from '@mui/material'
 import React from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import avatar from "../../images/avatar.jpg"
+import { getUserPhoto } from '../../Redux/Actions/userAction'
 import "./ReviewCard.css"
-const ReviewCard = ({ review, desc, picture }) => {
+const ReviewCard = ({ review, desc }) => {
 
+    const dispatch =useDispatch()
+    const {photo} = useSelector(state=>state.user)
+
+    useEffect(()=>{
+        dispatch(getUserPhoto(review.userId))
+    },[dispatch,review.userId])
+    
     return (
         <>
             <div className="review-component">
-                <div className='d-flex flex-column align-items-center justify-content-center px-3'>
-                    <img src={picture ? picture : avatar} className="review-img" alt="..." />
+                <div className='review_cont'>
+                    <img src={photo ? photo : avatar} className="review-img" alt="..." />
                 </div>
                 <div className='p-2'>
                     <h4 className="text-center review-name">{review.name}</h4>

@@ -1,10 +1,20 @@
+.review_cont{
+	height: 150px;
+	width: 150px;
+}
 .review-img {
 	width: 100%;
+	height: 100%;
 	border-radius: 100%;
+	object-fit: cover;
 }
 .review-component {
 	width: 20vw;
 	border: none;
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+	align-items: center;
 }
 .review-rating-component {
 	transform: scale(1.2);

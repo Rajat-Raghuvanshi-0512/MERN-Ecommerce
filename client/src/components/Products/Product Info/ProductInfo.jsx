@@ -10,6 +10,7 @@ import { addItemToCart } from '../../../Redux/Actions/cartAction'
 import { toast } from 'react-toastify'
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, FormHelperText, Rating, TextareaAutosize } from '@mui/material'
 import { REVIEW_RESET } from '../../../Redux/Constants/productConstants'
+import SimilarProducts from './SimilarProducts'
 
 const ProductInfo = () => {
 
@@ -51,6 +52,7 @@ const ProductInfo = () => {
         setOpen(false)
     }
 
+
     useEffect(() => {
         dispatch(getProductDetails(id))
         if (error) {
@@ -67,6 +69,7 @@ const ProductInfo = () => {
             dispatch({ type: REVIEW_RESET })
         }
     }, [dispatch, id, error, desc, ReviewError, success, Navigate])
+
 
     return (
         <>
@@ -131,37 +134,10 @@ const ProductInfo = () => {
                                     </div>
                                 </div>
                             </div>
-                            <Dialog
-                                aria-label="simple-dialogue-title"
-                                open={open}
-                                onClose={handleReviewToggle} fullWidth >
-                                <DialogTitle className="fs-2">Submit Review</DialogTitle>
-                                <DialogContent>
-                                    <div className='d-flex flex-column'>
-                                        <Rating
-                                            onClick={(e) => setRating(Number(e.target.value))}
-                                            className="mb-4 info-rating"
-                                            size='large'
-                                            precision={0.5}
-                                            value={rating}
-                                        />
-                                        <TextareaAutosize
-                                            aria-label="minimum height"
-                                            onChange={(e) => setComment(e.target.value)}
-                                            minRows={4}
-                                            placeholder="Add a comment..."
-                                            className='p-2 w-100'
-                                            value={comment}
-                                        />
-                                        <FormHelperText>(Maximum 100 characters)</FormHelperText>
-                                    </div>
-                                </DialogContent>
-                                <DialogActions>
-                                    <Button variant='outlined' onClick={handleReviewToggle} color="error">Cancel</Button>
-                                    <Button variant="contained" onClick={submitReview} color='primary'>Submit</Button>
-                                </DialogActions>
-
-                            </Dialog>
+                            {
+                                product && product.category &&
+                                <SimilarProducts category={product.category} />
+                            }
                             <h1 className="text-center border-bottom border-top py-2">Reviews</h1>
                             <div className="d-flex overflow-auto my-4">
                                 {
@@ -180,6 +156,37 @@ const ProductInfo = () => {
                                 }
                             </div>
                         </div>
+                        <Dialog
+                            aria-label="simple-dialogue-title"
+                            open={open}
+                            onClose={handleReviewToggle} fullWidth >
+                            <DialogTitle className="fs-2">Submit Review</DialogTitle>
+                            <DialogContent>
+                                <div className='d-flex flex-column'>
+                                    <Rating
+                                        onClick={(e) => setRating(Number(e.target.value))}
+                                        className="mb-4 info-rating"
+                                        size='large'
+                                        precision={0.5}
+                                        value={rating}
+                                    />
+                                    <TextareaAutosize
+                                        aria-label="minimum height"
+                                        onChange={(e) => setComment(e.target.value)}
+                                        minRows={4}
+                                        placeholder="Add a comment..."
+                                        className='p-2 w-100'
+                                        value={comment}
+                                    />
+                                    <FormHelperText>(Maximum 100 characters)</FormHelperText>
+                                </div>
+                            </DialogContent>
+                            <DialogActions>
+                                <Button variant='outlined' onClick={handleReviewToggle} color="error">Cancel</Button>
+                                <Button variant="contained" onClick={submitReview} color='primary'>Submit</Button>
+                            </DialogActions>
+
+                        </Dialog>
                     </>
             }
         </>

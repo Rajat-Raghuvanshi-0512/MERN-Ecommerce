@@ -80,7 +80,7 @@ const Product = () => {
                                     onChange={priceHandler}
                                     valueLabelDisplay="auto"
                                     min={0}
-                                    max={25000}
+                                    max={15000}
                                     step={1000}
                                 />
 

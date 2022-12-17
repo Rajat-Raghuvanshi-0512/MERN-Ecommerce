@@ -41,7 +41,6 @@ const Home = () => {
                         </div>
                     </div>
                     <Typography variant='h2' className='text-center border-bottom my-4' id="products">Featured Products</Typography>
-                    {/* <div className='mx-lg-5 mx-md-4 mx-sm-3 mx-2'> */}
                     <div className="row d-flex justify-content-center m-lg-5 m-sm-3 overflow-hidden">
                         {
                             featuredProducts && featuredProducts.map((product, index) => {

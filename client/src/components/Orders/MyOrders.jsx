@@ -66,13 +66,14 @@ const MyOrders = () => {
         }
     ]
     const rows = []
+    console.log(orders)
 
-    orders && orders.forEach((order => {
+    orders && orders.reverse().forEach((order => {
         rows.push({
             id: order._id,
             status: order.orderStatus,
             date: order.createdAt.slice(0, 10),
-            amount: order.itemsPrice
+            amount: order.totalPrice
         })
     }))
     useEffect(() => {

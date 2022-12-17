@@ -7,8 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node server/server.js",
 		"server": "nodemon server/server.js",
-		"client": "cd client && npm start",
-		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix client && npm run build --prefix client"
+		"client": "cd client && npm start"
 	},
 	"keywords": [],
 	"author": "",
@@ -27,5 +26,8 @@
 		"react-google-login": "^5.2.2",
 		"stripe": "^8.200.0",
 		"validator": "^13.7.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.20"
 	}
 }

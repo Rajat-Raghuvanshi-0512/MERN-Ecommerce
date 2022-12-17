@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, ALL_PRODUCT_FAIL, CLEAR_ERRORS, PRODUCT_REQUEST, PRODUCT_SUCCESS, PRODUCT_FAIL, REVIEW_REQUEST, REVIEW_SUCCESS, REVIEW_FAIL, ADMIN_PRODUCT_FAIL, ADMIN_PRODUCT_SUCCESS, ADMIN_PRODUCT_REQUEST, CREATE_PRODUCT_REQUEST, CREATE_PRODUCT_SUCCESS, CREATE_PRODUCT_FAIL, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_SUCCESS, UPDATE_PRODUCT_FAIL, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_FAIL, GET_ALL_REVIEWS_REQUEST, GET_ALL_REVIEWS_SUCCESS, GET_ALL_REVIEWS_FAIL, DELETE_REVIEW_SUCCESS, DELETE_REVIEW_FAIL, DELETE_REVIEW_REQUEST } from "../Constants/productConstants"
+import { ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, ALL_PRODUCT_FAIL, CLEAR_ERRORS, PRODUCT_REQUEST, PRODUCT_SUCCESS, PRODUCT_FAIL, REVIEW_REQUEST, REVIEW_SUCCESS, REVIEW_FAIL, ADMIN_PRODUCT_FAIL, ADMIN_PRODUCT_SUCCESS, ADMIN_PRODUCT_REQUEST, CREATE_PRODUCT_REQUEST, CREATE_PRODUCT_SUCCESS, CREATE_PRODUCT_FAIL, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_SUCCESS, UPDATE_PRODUCT_FAIL, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_FAIL, GET_ALL_REVIEWS_REQUEST, GET_ALL_REVIEWS_SUCCESS, GET_ALL_REVIEWS_FAIL, DELETE_REVIEW_SUCCESS, DELETE_REVIEW_FAIL, DELETE_REVIEW_REQUEST, PRODUCT_BY_CATEGORY_REQUEST, PRODUCT_BY_CATEGORY_SUCCESS, PRODUCT_BY_CATEGORY_FAIL } from "../Constants/productConstants"
 
 //Get all products
 export const getProducts = (keyword = "", price = [0, 150000], rating = 0, page = 1, category = []) => async (dispatch) => {
@@ -8,6 +8,9 @@ export const getProducts = (keyword = "", price = [0, 150000], rating = 0, page 
             type: ALL_PRODUCT_REQUEST
         })
         let link;
+        if (price[1] === 15000) {
+            price[1] = 150000
+        }
         if (category.length !== 0) {
             let products = [];
             category.map(async (cat) => {
@@ -160,6 +163,25 @@ export const addReview = (productId, rating, comment) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: REVIEW_FAIL,
+            payload: error.response.data.error
+        })
+    }
+}
+
+export const getProductsByCategory = (category) => async (dispatch) => {
+    try {
+        dispatch({
+            type: PRODUCT_BY_CATEGORY_REQUEST
+        })
+        const { data } = await axios.get(`/api/products/category/${category}`)
+        dispatch({
+            type: PRODUCT_BY_CATEGORY_SUCCESS,
+            payload: data.products
+        })
+
+    } catch (error) {
+        dispatch({
+            type: PRODUCT_BY_CATEGORY_FAIL,
             payload: error.response.data.error
         })
     }
