@@ -57,5 +57,5 @@
 			"last 1 safari version"
 		]
 	},
-	"proxy": "http://localhost:4000"
+	"proxy": "https://my-shop-buddy.vercel.app"
 }
